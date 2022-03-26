@@ -1,5 +1,11 @@
-### Quiz game that asks client to answer questions.
 
+# Card Quiz Game at Casino
+## Project Developers
+- Raul Zarate
+- Micheal Brunette
+- Allen Brazier
+
+### Quiz Game that asks client to answer questions.
 - 1 base: 5 questions -local storage and/or a loop. 
 - 2 base: setting is at a casino in Las Vegas
 - 3 base: The program will send out a card from the top of the deck of cards (questionaire) and the user must respond with an answer from a selection of possible answers ?  a, b, c, d, e
@@ -13,7 +19,7 @@
 
 - key implementations landmarks: html element will be place holder. javascript will have the cards saved manually and save responses using local storage. event listener will receive a response from user.
 
-## Rules
+### Rules
 - [1] take a seat or walk away in the question card game. (2 base)
 - [2] choose a card from top of deck face down with (2 overshoot goals) (3 base)
 - [3] wager bet amount for extra points or call the amount at minimum buy in. (3 overshoot goals) (3 base)
