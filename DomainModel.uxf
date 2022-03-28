@@ -24,11 +24,11 @@ Responsibilities
 
 --
 Responsibilities
--- Loops through questions for client</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>540</y><w>210</w><h>190</h></coordinates><panel_attributes>Function Prototype: (Event Handler) : void
+-- Loops through questions for client</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>540</y><w>280</w><h>190</h></coordinates><panel_attributes>Function Prototype: (Event Handler) : void
 
 --
 Responsibilities
--- receives the event handler and updates tallys</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>530</y><w>210</w><h>190</h></coordinates><panel_attributes>Function Prototype: (Event Listener) : void
+-- receives the event handler and updates tallys</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>530</y><w>240</w><h>190</h></coordinates><panel_attributes>Function Prototype: (Event Listener) : void
 
 --
 Responsibilities
