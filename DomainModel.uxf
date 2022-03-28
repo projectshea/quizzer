@@ -1,0 +1,35 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>60</x><y>200</y><w>190</w><h>50</h></coordinates><panel_attributes>User
+- Choose to input answers
+- Loads Screen with questions</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>130</y><w>270</w><h>350</h></coordinates><panel_attributes>Main Class to Client
+--
+Responsibilities:
+
+
+- Ranomized questions that Selects 5 different questions
+- will select questions.
+- will retry if input is received
+- tally's up points for outstreaming the data.
+- is a relationship to function constructor 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>220</y><w>80</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>170</y><w>220</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;200;10</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>280</y><w>300</w><h>280</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;270;20;280;260</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>440</y><w>180</w><h>110</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;160;20;160;90</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>240</y><w>450</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;340;10;430;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>760</x><y>30</y><w>400</w><h>190</h></coordinates><panel_attributes>Function Constructor (Questionnaire)
+{ Properties: Key, Value}
+--
+-id: Long
+_-ClassProperties: question1, question2, question3, question4, question5_
+--
+#QuestionArray(size: 5): int
+--
+Responsibilities
+-- Resp1: object literals will be questionx, where x is a int in class properties
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>900</x><y>310</y><w>210</w><h>190</h></coordinates><panel_attributes>Function Prototype: (looper) : void
+
+--
+Responsibilities
+-- Loops through questions for client</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>540</y><w>280</w><h>190</h></coordinates><panel_attributes>Function Prototype: (Event Handler) : void
+
+--
+Responsibilities
+-- receives the event handler and updates tallys</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>530</y><w>240</w><h>190</h></coordinates><panel_attributes>Function Prototype: (Event Listener) : void
+
+--
+Responsibilities
+-- receives the client input</panel_attributes><additional_attributes></additional_attributes></element></diagram>
