@@ -11,3 +11,33 @@ here is code that will:
             or make bargraph of probability guessing the next card
 
 */
+
+use strict;
+
+let quizArray = [];
+
+let answersArray = [];
+
+let myForm = document.getElementById('Answer-fromQuiz');
+
+function GenerateQuiz(questions, quizContainer, resultsContainer, submitButton){
+  this.questions = questions;
+  this.quizContainer = quizContainer;
+  this.resultsContainer = resultsContainer;
+  this.submitButton = submitButton;
+  quizArray.push(this)
+
+}
+GenerateQuiz.prototype.showQuestions = function(questions, quizContainer, resultsContainer){
+  
+}
+
+function handleSubmit(event){
+  for(let i = 0; i < questions.length; i++){
+
+
+  }
+
+
+}
+myForm.addEventListener('submit', handleSubmit)
