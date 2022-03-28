@@ -7,5 +7,7 @@ here is code that will:
  create options for answers
  create questions
  tally points
+ Make a bargraph using local storage of wins 
+            or make bargraph of probability guessing the next card
 
 */
