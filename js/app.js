@@ -12,26 +12,42 @@ here is code that will:
 
 */
 
+
+// let quizArray = [];
+
+// let answersArray = [];
 use strict;
 
-let quizArray = [];
+let myForm = document.getElementById('Response-fromQuiz');
+let legElem = document.getElementById('question-box');
+let opt1 = document.getElementById('optionOne');
+let opt2 = document.getElementById('optionTwo');
+let opt3 = document.getElementById('optionThree');
+let opt4 = document.getElementById('optionFour');
 
-let answersArray = [];
 
-let myForm = document.getElementById('Answer-fromQuiz');
-
-function GenerateQuiz(questions, quizContainer, resultsContainer, submitButton){
+function GenerateQuiz(questions, quizContainer, resultsContainer){
   this.questions = questions;
-  this.quizContainer = quizContainer;
-  this.resultsContainer = resultsContainer;
-  this.submitButton = submitButton;
+  this.quizContainer = quizContainer;  //actual quiz 3 of them obj literal
+  this.resultsContainer = resultsContainer; //quiz score
   quizArray.push(this)
 
 }
 GenerateQuiz.prototype.showQuestions = function(questions, quizContainer, resultsContainer){
   
 }
+new GenerateQuiz(questions, quizContainer, resultsContainer)
 
+GenerateQuiz.prototype.renderForm = function(){
+  let arrCont = optionsHtmlarray.split(' ');
+  legElem.textContent = quizHtmlArray[i];
+  opt1.textContent = arrCont[0];
+  opt2.textContent = arrCont[1];
+  opt3.textContent = arrCont[2];
+  opt4.textContent = arrCont[3];
+  myForm.appendChild();
+
+}
 function handleSubmit(event){
   for(let i = 0; i < questions.length; i++){
 
