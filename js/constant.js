@@ -4,7 +4,7 @@
 
 
 
-let quizArray = [
+let quizQArray = [
   //HTML Questions
   'Which of the following elements is used to create an unordered list?',
   'Which tag is used to create a hyperlink?',

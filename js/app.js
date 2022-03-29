@@ -82,9 +82,9 @@ GenerateQuiz.prototype.renderForm = function()
 //quizHtmlArray, quizCssArray, quizJsArray
 //optionsHtmlArray, optionsCssArray, optionsJsArray
 //answersHtmlArray, anwswersCssArray, answersJsArray
-for(let i = 0; i < quizHtmlArray.length; i++)//all arrays should be exactly the same length
+for(let i = 0; i < quizQArray.length; i++)//all arrays should be exactly the same length
 {
-  new GenerateQuiz(quizArray[i], optionsArray[i], answersArray[i]);
+  new GenerateQuiz(quizQArray[i], optionsArray[i], answersArray[i]);
 }
 //TODO: bonus round
 //if(points are greater than or equal to minBonusRoundPoints)
@@ -101,7 +101,7 @@ function getRandom(min, max){  return Math.floor(Math.random() * (max - min + 1)
 /************************* caller function********** */
 function main()
 {
-  let rando = getRandom(0, quizArray.length);
+  let rando = getRandom(0, quizArray.length - 1);
   for(let aQuiz of quizArray)
   {
     if(!askedQuestion.includes(rando))
