@@ -12,48 +12,135 @@ here is code that will:
 
 */
 
+'use strict'
 
-// let quizArray = [];
+let quizArray = [];//uses the constructor to save an array of objects
+let arrCont = [];//content used to split the questions inside render prototype
+let askedQuestion = [];//saves integers where random() is used. this will keep track if something has been asked already.
+let resultsCounter; //quiz score - will be tallied in prototype
 
-// let answersArray = [];
-use strict;
-
+//html callers
 let myForm = document.getElementById('Response-fromQuiz');
-let legElem = document.getElementById('question-box');
-let opt1 = document.getElementById('optionOne');
-let opt2 = document.getElementById('optionTwo');
-let opt3 = document.getElementById('optionThree');
-let opt4 = document.getElementById('optionFour');
+let legElem = document.getElementById('questionbox');
+let opt1 = document.getElementById('option1');
+let opt2 = document.getElementById('option2');
+let opt3 = document.getElementById('option3');
+let opt4 = document.getElementById('option4');
 
+/*******************constructor ****************** */
+function GenerateQuiz(quizQuestion, quizOption, quizAnswer)
+{
+  this.quizQuestion = quizQuestion;//string is a question
+  this.quizOption = quizOption;  //String with a,b,c,d possible options - MUST Be SPLICED@!
+  this.quizAnswer = quizAnswer; //the correct answer from array -MUST Be SPliced!!
+  this.weight; //will give weight to each question
 
-function GenerateQuiz(questions, quizContainer, resultsContainer){
-  this.questions = questions;
-  this.quizContainer = quizContainer;  //actual quiz 3 of them obj literal
-  this.resultsContainer = resultsContainer; //quiz score
   quizArray.push(this)
 
 }
-GenerateQuiz.prototype.showQuestions = function(questions, quizContainer, resultsContainer){
-  
-}
-new GenerateQuiz(questions, quizContainer, resultsContainer)
+/******************************* Prototypes*************** */
+GenerateQuiz.prototype.showQuestions = function()
+{
 
-GenerateQuiz.prototype.renderForm = function(){
-  let arrCont = optionsHtmlarray.split(' ');
-  legElem.textContent = quizHtmlArray[i];
-  opt1.textContent = arrCont[0];
-  opt2.textContent = arrCont[1];
-  opt3.textContent = arrCont[2];
-  opt4.textContent = arrCont[3];
-  myForm.appendChild();
 
 }
-function handleSubmit(event){
-  for(let i = 0; i < questions.length; i++){
 
 
+GenerateQuiz.prototype.renderForm = function()
+{
+  arrCont = this.quizOption.split(' ');
+  legElem.textContent = this.quizQuestion;//asks the question
+
+  for(let i = 1; i < 5; ++i)//only four options
+  {
+    //input creator
+    let inputElem = document.createElement('input');
+    inputElem.setAttribute('type', 'radio');
+    inputElem.setAttribute('id', 'option' + i);
+    inputElem.setAttribute('name', 'optionsFamily');
+    legElem.appendChild(inputElem);
+    let splitter = arrCont[i - 1].split('.');
+    //label creator
+    const labelElem = document.createElement('label');
+    labelElem.setAttribute('for', 'option' + i);
+    labelElem.textContent = splitter[0] + ') ' +  splitter[1];//offset from loop
+    legElem.appendChild(labelElem);
   }
 
 
 }
-myForm.addEventListener('submit', handleSubmit)
+
+/******************** generating the questions *************** */
+//quizHtmlArray, quizCssArray, quizJsArray
+//optionsHtmlArray, optionsCssArray, optionsJsArray
+//answersHtmlArray, anwswersCssArray, answersJsArray
+for(let i = 0; i < quizHtmlArray.length; i++)//all arrays should be exactly the same length
+{
+  new GenerateQuiz(quizHtmlArray[i], optionsHtmlArray[i], answersHtmlArray[i]);
+}
+
+
+/************************* helper functions**************** */
+function getRandom(min, max){  return Math.floor(Math.random() * (max - min + 1) + min);}
+
+/************************* caller function********** */
+function main()
+{
+  let rando = getRandom(0, quizArray.length);
+  for(let aQuiz of quizArray)
+  {
+    if(!askedQuestion.includes(rando))
+    {
+      quizArray[rando].renderForm();
+      askedQuestion.push(rando);//askQuestion saves the rando number so that we dont ask question again
+      break;
+    }
+  }
+}
+main();
+
+function handleSubmit(event)
+{
+  event.preventDefault();
+  let question_Box = event.target[0].childNodes[1].firstChild.nodeValue;
+  let userResponse;
+  let newUserAnswer1 = event.target.option1.checked;
+  let newUserAnswer2 = event.target.option2.checked;
+  let newUserAnswer3 = event.target.option3.checked;
+  let newUserAnswer4 = event.target.option4.checked;
+
+  if(newUserAnswer1){userResponse = arrCont[0];}
+  if(newUserAnswer2){userResponse = arrCont[1];}
+  if(newUserAnswer3){userResponse = arrCont[2];}
+  if(newUserAnswer4){userResponse = arrCont[3];}
+    userResponse = userResponse.split('.');
+  
+
+  /*
+  loop goes through all quiz questions string in quizArray to find the correlating correct answers.
+  */
+  for(let question of quizArray)
+  {
+    if(question.quizQuestion === question_Box &&//check if we are at the right question
+       question.quizAnswer === userResponse[0])//and check if the answer matches client response
+    {
+      alert(`you guessed ${userResponse[0]} and the answer is ${userResponse[1]}! Good job, have some points!`);
+      //question.resultsCounter++;//if so, tally points
+      resultsCounter++;
+      break;
+    }
+    else if(question.quizQuestion === question_Box &&
+      question.quizAnswer !== userResponse[0])
+    {
+      alert("alert you were wrong! ");
+      break;
+    }
+    //else continue searching questions till found
+  }
+
+  //new set of questions after click
+  main();
+
+}
+//************** event listener ***************************/
+myForm.addEventListener('submit', handleSubmit);

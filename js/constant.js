@@ -1,3 +1,7 @@
+/*
+  TODO: these need to be in the same exact format including spaces. Otherwise, Splice wont work properly 
+*/
+
 let quizHtmlArray = [
   'Which of the following elements is used to create an unordered list?',
   'Which tag is used to create a hyperlink?',
@@ -12,13 +16,13 @@ let answersHtmlArray = ['c','b','c','c','d','d',];
 let answersCssArray = [];
 let answersJsArray = [];
 
-let optionsHtmlarray = [
-  'a.<list> b.<unorderedList> c.<ul> d.<li ',
-  'a.<a> b.<b> c.<link> d.<source> ',
-  'a.X b./ c.. d.# ',
-  'a.<h1> b.<head> c.<th> d.<theader> ',
-  'a.<h2> b.<p> c.<s> d.<head> ',
-  'a.<ul> b.<ol> c.<lists> d.A&B. '];
+let optionsHtmlArray = [
+  'a.<list> b.<unorderedList> c.<ul> d.<li>',
+  'a.<a> b.<b> c.<link> d.<source>',
+  'a.X b./ c.. d.#',
+  'a.<h1> b.<head> c.<th> d.<theader>',
+  'a.<h2> b.<p> c.<s> d.<head>',
+  'a.<ul> b.<ol> c.<lists> d.A&B.'];
 let optionsCssArray = [];
 let optionsJsArray= [];
 
@@ -114,10 +118,10 @@ let optionsJsArray= [];
 // 	c. <th>
 // 	d. <theader>
 // 6. Which is NOT a valid HTML tag?
-	a. <h2>
-	b. <p>
-	c. <s>
-	d. <head>
+//	a. <h2>
+//	b. <p>
+	//c. <s>
+	//d. <head>
 // 7. Which of the following are used to create lists?
 // 	a. <ul>
 // 	b. <ol>
