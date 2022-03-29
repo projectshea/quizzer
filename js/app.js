@@ -12,7 +12,7 @@ here is code that will:
 
 */
 
-'use strict'
+'use strict';
 
 let quizArray = [];//uses the constructor to save an array of objects
 let arrCont = [];//content used to split the questions inside render prototype
