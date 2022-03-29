@@ -12,11 +12,7 @@ here is code that will:
 
 */
 
-
-// let quizArray = [];
-
-// let answersArray = [];
-use strict;
+'use strict'
 
 let myForm = document.getElementById('Response-fromQuiz');
 let legElem = document.getElementById('question-box');
@@ -25,29 +21,58 @@ let opt2 = document.getElementById('optionTwo');
 let opt3 = document.getElementById('optionThree');
 let opt4 = document.getElementById('optionFour');
 
+/*******************constructor ****************** */
+function GenerateQuiz(quizQuestion, quizOption, quizAnswer)
+{
+  this.questions = quizQuestion;
+  this.quizOption = quizOption;  //actual quiz 3 of them obj literal
+  this.quizAnswer = quizAnswer
+  this.resultsCounter = resultsCounter; //quiz score
 
-function GenerateQuiz(questions, quizContainer, resultsContainer){
-  this.questions = questions;
-  this.quizContainer = quizContainer;  //actual quiz 3 of them obj literal
-  this.resultsContainer = resultsContainer; //quiz score
   quizArray.push(this)
 
 }
-GenerateQuiz.prototype.showQuestions = function(questions, quizContainer, resultsContainer){
+/******************************* Prototypes*************** */
+GenerateQuiz.prototype.showQuestions = function()
+{
   
-}
-new GenerateQuiz(questions, quizContainer, resultsContainer)
 
-GenerateQuiz.prototype.renderForm = function(){
+}
+
+
+GenerateQuiz.prototype.renderForm = function()
+{
   let arrCont = optionsHtmlarray.split(' ');
   legElem.textContent = quizHtmlArray[i];
   opt1.textContent = arrCont[0];
   opt2.textContent = arrCont[1];
   opt3.textContent = arrCont[2];
   opt4.textContent = arrCont[3];
-  myForm.appendChild();
+  //myForm.appendChild();
 
 }
+
+/******************** generating the questions *************** */
+//quizHtmlArray, quizCssArray, quizJsArray
+//optionsHtmlArray, optionsCssArray, optionsJsArray
+//answersHtmlArray, anwswersCssArray, answersJsArray
+for(let i = 0; i < quizHtmlArray.length; i++)//all arrays should be exactly the same length
+{
+  new GenerateQuiz(quizHtmlArray[i], optionsHtmlArray[i], answersHtmlArray[i]);
+}
+
+
+/************************* caller function********** */
+function main()
+{
+  for(aQuiz of quizArray)
+  {
+    aQuiz.setQuestion();
+    aQuiz.setAnswer();
+    aQuiz.renderForm();
+  }
+}
+
 function handleSubmit(event){
   for(let i = 0; i < questions.length; i++){
 

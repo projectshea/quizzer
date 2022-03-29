@@ -12,7 +12,7 @@ let answersHtmlArray = ['c','b','c','c','d','d',];
 let answersCssArray = [];
 let answersJsArray = [];
 
-let optionsHtmlarray = [
+let optionsHtmlArray = [
   'a.<list> b.<unorderedList> c.<ul> d.<li ',
   'a.<a> b.<b> c.<link> d.<source> ',
   'a.X b./ c.. d.# ',
