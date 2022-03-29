@@ -1,3 +1,7 @@
+/*
+  TODO: these need to be in the same exact format including spaces. Otherwise, Splice wont work properly 
+*/
+
 let quizHtmlArray = [
   'Which of the following elements is used to create an unordered list?',
   'Which tag is used to create a hyperlink?',

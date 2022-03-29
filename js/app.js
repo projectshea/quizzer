@@ -47,25 +47,27 @@ GenerateQuiz.prototype.showQuestions = function()
 GenerateQuiz.prototype.renderForm = function()
 {
   arrCont = this.quizOption.split(' ');
-  //TODO: this overrides the text everytime in DOM. either display:hide (every question is dynamically named differently using same element in html)
+  //TODO: this overrides the text everytime in DOM in line 53.
+  //either display:hide (every question is dynamically named differently using same element in html)
   //or wait somehow for user to answer question and kick this off again.
   legElem.textContent = this.quizQuestion;//asks the question
 
   for(let i = 1; i < 5; ++i)//only four options
   {
+    //input creator
     let inputElem = document.createElement('input');
     inputElem.setAttribute('type', 'radio');
     inputElem.setAttribute('id', 'option' + i);
     inputElem.setAttribute('name', 'optionsFamily');
     legElem.appendChild(inputElem);
-
+    
+    //label creator
     const labelElem = document.createElement('label');
     labelElem.setAttribute('for', 'option' + i);
     labelElem.textContent = arrCont[i - 1];//offset from loop
     legElem.appendChild(labelElem);
   }
 
-  //myForm.appendChild();
 
 }
 
