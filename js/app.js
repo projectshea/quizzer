@@ -1,13 +1,13 @@
 /*
 here is code that will:
- make things smooth
- create card questions
- create random generator
- create bonus round
- create options for answers
- create questions
- tally points
- Make a bargraph using local storage of wins 
+ [ ]make things smooth
+ [x]create card questions
+ [x]create random generator
+ [ ]create bonus round
+ [x]create options for answers
+ [x]create questions
+ [x]tally points
+ [ ]Make a bargraph using local storage of wins 
             or make bargraph of probability guessing the next card
 
 */
@@ -18,6 +18,7 @@ let quizArray = [];//uses the constructor to save an array of objects
 let arrCont = [];//content used to split the questions inside render prototype
 let askedQuestion = [];//saves integers where random() is used. this will keep track if something has been asked already.
 let resultsCounter; //quiz score - will be tallied in prototype
+let BonusQuesArray = [];//holds the bonus rounds
 
 //html callers
 let myForm = document.getElementById('Response-fromQuiz');
@@ -31,12 +32,21 @@ let opt4 = document.getElementById('option4');
 function GenerateQuiz(quizQuestion, quizOption, quizAnswer)
 {
   this.quizQuestion = quizQuestion;//string is a question
-  this.quizOption = quizOption;  //String with a,b,c,d possible options - MUST Be SPLICED@!
+  this.quizOption = quizOption;  //String with a,b,c,d possible options - MUST Be SPLICED!
   this.quizAnswer = quizAnswer; //the correct answer from array -MUST Be SPliced!!
   this.weight; //will give weight to each question
 
-  quizArray.push(this)
 
+  quizArray.push(this)
+}
+
+function BonusRound(quizQuestion, quizOption, quizAnswer)
+{
+  this.BonusRoundQ = quizQuestion//question
+  this.BonusRoundO = quizOption//option
+  this.BonusRoundA = quizAnswer//answers
+  this.weight;//add some weight to each question TODO: Math.random()
+  BonusQuesArray.push(this);
 }
 /******************************* Prototypes*************** */
 GenerateQuiz.prototype.showQuestions = function()
@@ -48,7 +58,7 @@ GenerateQuiz.prototype.showQuestions = function()
 
 GenerateQuiz.prototype.renderForm = function()
 {
-  arrCont = this.quizOption.split(' ');
+  arrCont = this.quizOption.split('-');
   legElem.textContent = this.quizQuestion;//asks the question
 
   for(let i = 1; i < 5; ++i)//only four options
@@ -66,17 +76,22 @@ GenerateQuiz.prototype.renderForm = function()
     labelElem.textContent = splitter[0] + ') ' +  splitter[1];//offset from loop
     legElem.appendChild(labelElem);
   }
-
-
 }
 
-/******************** generating the questions *************** */
+/******************** generating the questions ****************/
 //quizHtmlArray, quizCssArray, quizJsArray
 //optionsHtmlArray, optionsCssArray, optionsJsArray
 //answersHtmlArray, anwswersCssArray, answersJsArray
 for(let i = 0; i < quizHtmlArray.length; i++)//all arrays should be exactly the same length
 {
-  new GenerateQuiz(quizHtmlArray[i], optionsHtmlArray[i], answersHtmlArray[i]);
+  new GenerateQuiz(quizArray[i], optionsArray[i], answersArray[i]);
+}
+//TODO: bonus round
+//if(points are greater than or equal to minBonusRoundPoints)
+{
+  //bonus round
+  //new BonusRound(x,x,x); ->  //Notice: constant.js has all arrays with 10 questions for each type(html, css, js). therefore, questionsArray[0 -9] are all html questions and so on.
+
 }
 
 
