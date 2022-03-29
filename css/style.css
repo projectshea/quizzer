@@ -1,7 +1,7 @@
 header
 {
-    padding-bottom: 100px;
-    padding-top: 128px;
+    padding-bottom: 10px;
+    padding-top: 28px;
     
 }
 
@@ -10,3 +10,29 @@ header
     display: hide;
 }
 */
+
+#left {  
+    width: 400px;  
+    height: 300px;  
+    border: 5px solid rgb(19, 1, 1);   
+    object-fit: fill;  
+    object-position: left top;  
+    }  
+    #right {  
+    width: 400px;  
+    height: 300px;  
+    border: 5px solid rgb(19, 1, 1);  
+    object-fit: fill;  
+    object-position: right top;  
+    }  
+    #center{
+        width: 400px;  
+        height: 300px;  
+        border: 5px solid rgb(19, 1, 1);   
+        object-fit: fill;  
+        object-position: top center;
+
+    }
+    body{
+        background-image:url('../img/cardgame.jpg');
+    }
