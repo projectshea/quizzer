@@ -15,10 +15,11 @@ here is code that will:
 'use strict'
 
 let quizArray = [];
+let arrCont = [];
 
 //html callers
 let myForm = document.getElementById('Response-fromQuiz');
-let legElem = document.getElementById('question-box');
+let legElem = document.getElementById('questionbox');
 let opt1 = document.getElementById('option1');
 let opt2 = document.getElementById('option2');
 let opt3 = document.getElementById('option3');
@@ -45,7 +46,9 @@ GenerateQuiz.prototype.showQuestions = function()
 
 GenerateQuiz.prototype.renderForm = function()
 {
-  let arrCont = this.quizOption.split(' ');
+  arrCont = this.quizOption.split(' ');
+  //TODO: this overrides the text everytime in DOM. either display:hide (every question is dynamically named differently using same element in html)
+  //or wait somehow for user to answer question and kick this off again.
   legElem.textContent = this.quizQuestion;//asks the question
 
   for(let i = 1; i < 5; ++i)//only four options
@@ -97,17 +100,44 @@ main();
 function handleSubmit(event)
 {
   event.preventDefault();
-  const newUserAnswer1 = event.target.option1.checked;
-  const newUserAnswer2 = event.target.option2.checked;
-  const newUserAnswer3 = event.target.option3.checked;
-  const newUserAnswer4 = event.target.option4.checked;
+  let question_Box = event.target[0].childNodes[1].firstChild.nodeValue;
+  let userResponse;
+  let container;
+  let newUserAnswer1 = event.target.option1.checked;
+  let newUserAnswer2 = event.target.option2.checked;
+  let newUserAnswer3 = event.target.option3.checked;
+  let newUserAnswer4 = event.target.option4.checked;
 
-  if(newUserAnswer1){}
-  if(newUserAnswer2){}
-  if(newUserAnswer3){}
-  if(newUserAnswer4){}
+  if(newUserAnswer1){userResponse = arrCont[0];}
+  if(newUserAnswer2){userResponse = arrCont[1];}
+  if(newUserAnswer3){userResponse = arrCont[2];}
+  if(newUserAnswer4){userResponse = arrCont[3];}
+    userResponse = userResponse.split('.');
+  
+
+  /*
+  loop goes through all quiz questions string in quizArray to find the correlating correct answers.
+  */
+  for(let question of quizArray)
+  {
+    if(question.quizQuestion === question_Box &&//check if we are at the right question
+       question.quizAnswer === userResponse[0])//and check if the answer matches client response
+    {
+      alert(`you guessed ${userResponse[0]} and the answer is ${userResponse[1]}! Good job, have some points!`);
+      question.resultsCounter++;//if so, tally points
+      break;
+    }
+    else if(question.quizQuestion === question_Box &&
+      question.quizAnswer !== userResponse[0])
+    {
+      alert("alert you were wrong! ");
+      break;
+    }
+    //else continue searching questions till found
+  }
+
   //new set of questions after click
-  new GenerateQuiz(quizHtmlArray[2], optionsHtmlArray[2], answersHtmlArray[2])
+  main();
 
 }
 //************** event listener ***************************/
