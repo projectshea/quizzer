@@ -13,12 +13,12 @@ let answersCssArray = [];
 let answersJsArray = [];
 
 let optionsHtmlArray = [
-  'a.<list> b.<unorderedList> c.<ul> d.<li ',
-  'a.<a> b.<b> c.<link> d.<source> ',
-  'a.X b./ c.. d.# ',
-  'a.<h1> b.<head> c.<th> d.<theader> ',
-  'a.<h2> b.<p> c.<s> d.<head> ',
-  'a.<ul> b.<ol> c.<lists> d.A&B. '];
+  'a.<list> b.<unorderedList> c.<ul> d.<li>',
+  'a.<a> b.<b> c.<link> d.<source>',
+  'a.X b./ c.. d.#',
+  'a.<h1> b.<head> c.<th> d.<theader>',
+  'a.<h2> b.<p> c.<s> d.<head>',
+  'a.<ul> b.<ol> c.<lists> d.A&B.'];
 let optionsCssArray = [];
 let optionsJsArray= [];
 
@@ -114,10 +114,10 @@ let optionsJsArray= [];
 // 	c. <th>
 // 	d. <theader>
 // 6. Which is NOT a valid HTML tag?
-	a. <h2>
-	b. <p>
-	c. <s>
-	d. <head>
+//	a. <h2>
+//	b. <p>
+	//c. <s>
+	//d. <head>
 // 7. Which of the following are used to create lists?
 // 	a. <ul>
 // 	b. <ol>

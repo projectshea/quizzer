@@ -14,20 +14,23 @@ here is code that will:
 
 'use strict'
 
+let quizArray = [];
+
+//html callers
 let myForm = document.getElementById('Response-fromQuiz');
 let legElem = document.getElementById('question-box');
-let opt1 = document.getElementById('optionOne');
-let opt2 = document.getElementById('optionTwo');
-let opt3 = document.getElementById('optionThree');
-let opt4 = document.getElementById('optionFour');
+let opt1 = document.getElementById('option1');
+let opt2 = document.getElementById('option2');
+let opt3 = document.getElementById('option3');
+let opt4 = document.getElementById('option4');
 
 /*******************constructor ****************** */
 function GenerateQuiz(quizQuestion, quizOption, quizAnswer)
 {
-  this.questions = quizQuestion;
-  this.quizOption = quizOption;  //actual quiz 3 of them obj literal
-  this.quizAnswer = quizAnswer
-  this.resultsCounter = resultsCounter; //quiz score
+  this.quizQuestion = quizQuestion;//string is a question
+  this.quizOption = quizOption;  //String with a,b,c,d possible options - MUST Be SPLICED@!
+  this.quizAnswer = quizAnswer; //the correct answer from array -MUST Be SPliced!!
+  this.resultsCounter; //quiz score - will be tallied in prototype
 
   quizArray.push(this)
 
@@ -35,19 +38,30 @@ function GenerateQuiz(quizQuestion, quizOption, quizAnswer)
 /******************************* Prototypes*************** */
 GenerateQuiz.prototype.showQuestions = function()
 {
-  
+
 
 }
 
 
 GenerateQuiz.prototype.renderForm = function()
 {
-  let arrCont = optionsHtmlarray.split(' ');
-  legElem.textContent = quizHtmlArray[i];
-  opt1.textContent = arrCont[0];
-  opt2.textContent = arrCont[1];
-  opt3.textContent = arrCont[2];
-  opt4.textContent = arrCont[3];
+  let arrCont = this.quizOption.split(' ');
+  legElem.textContent = this.quizQuestion;//asks the question
+
+  for(let i = 1; i < 5; ++i)//only four options
+  {
+    let inputElem = document.createElement('input');
+    inputElem.setAttribute('type', 'radio');
+    inputElem.setAttribute('id', 'option' + i);
+    inputElem.setAttribute('name', 'optionsFamily');
+    legElem.appendChild(inputElem);
+
+    const labelElem = document.createElement('label');
+    labelElem.setAttribute('for', 'option' + i);
+    labelElem.textContent = arrCont[i - 1];//offset from loop
+    legElem.appendChild(labelElem);
+  }
+
   //myForm.appendChild();
 
 }
@@ -62,23 +76,39 @@ for(let i = 0; i < quizHtmlArray.length; i++)//all arrays should be exactly the 
 }
 
 
+/************************* helper functions**************** */
+//function setForm()
+//{}
+
+
 /************************* caller function********** */
 function main()
 {
-  for(aQuiz of quizArray)
+  //setForm();//initializes the form
+  for(let aQuiz of quizArray)
   {
-    aQuiz.setQuestion();
-    aQuiz.setAnswer();
+    //aQuiz.setQuestion();
+    //aQuiz.setAnswer();
     aQuiz.renderForm();
   }
 }
+main();
 
-function handleSubmit(event){
-  for(let i = 0; i < questions.length; i++){
+function handleSubmit(event)
+{
+  event.preventDefault();
+  const newUserAnswer1 = event.target.option1.checked;
+  const newUserAnswer2 = event.target.option2.checked;
+  const newUserAnswer3 = event.target.option3.checked;
+  const newUserAnswer4 = event.target.option4.checked;
 
-
-  }
-
+  if(newUserAnswer1){}
+  if(newUserAnswer2){}
+  if(newUserAnswer3){}
+  if(newUserAnswer4){}
+  //new set of questions after click
+  new GenerateQuiz(quizHtmlArray[2], optionsHtmlArray[2], answersHtmlArray[2])
 
 }
-myForm.addEventListener('submit', handleSubmit)
+//************** event listener ***************************/
+myForm.addEventListener('submit', handleSubmit);
