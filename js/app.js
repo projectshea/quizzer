@@ -14,8 +14,10 @@ here is code that will:
 
 'use strict'
 
-let quizArray = [];
-let arrCont = [];
+let quizArray = [];//uses the constructor to save an array of objects
+let arrCont = [];//content used to split the questions inside render prototype
+let askedQuestion = [];//saves integers where random() is used. this will keep track if something has been asked already.
+let resultsCounter; //quiz score - will be tallied in prototype
 
 //html callers
 let myForm = document.getElementById('Response-fromQuiz');
@@ -31,7 +33,7 @@ function GenerateQuiz(quizQuestion, quizOption, quizAnswer)
   this.quizQuestion = quizQuestion;//string is a question
   this.quizOption = quizOption;  //String with a,b,c,d possible options - MUST Be SPLICED@!
   this.quizAnswer = quizAnswer; //the correct answer from array -MUST Be SPliced!!
-  this.resultsCounter; //quiz score - will be tallied in prototype
+  this.weight; //will give weight to each question
 
   quizArray.push(this)
 
@@ -47,9 +49,6 @@ GenerateQuiz.prototype.showQuestions = function()
 GenerateQuiz.prototype.renderForm = function()
 {
   arrCont = this.quizOption.split(' ');
-  //TODO: this overrides the text everytime in DOM in line 53.
-  //either display:hide (every question is dynamically named differently using same element in html)
-  //or wait somehow for user to answer question and kick this off again.
   legElem.textContent = this.quizQuestion;//asks the question
 
   for(let i = 1; i < 5; ++i)//only four options
@@ -60,11 +59,11 @@ GenerateQuiz.prototype.renderForm = function()
     inputElem.setAttribute('id', 'option' + i);
     inputElem.setAttribute('name', 'optionsFamily');
     legElem.appendChild(inputElem);
-    
+    let splitter = arrCont[i - 1].split('.');
     //label creator
     const labelElem = document.createElement('label');
     labelElem.setAttribute('for', 'option' + i);
-    labelElem.textContent = arrCont[i - 1];//offset from loop
+    labelElem.textContent = splitter[0] + ') ' +  splitter[1];//offset from loop
     legElem.appendChild(labelElem);
   }
 
@@ -82,19 +81,20 @@ for(let i = 0; i < quizHtmlArray.length; i++)//all arrays should be exactly the 
 
 
 /************************* helper functions**************** */
-//function setForm()
-//{}
-
+function getRandom(min, max){  return Math.floor(Math.random() * (max - min + 1) + min);}
 
 /************************* caller function********** */
 function main()
 {
-  //setForm();//initializes the form
+  let rando = getRandom(0, quizArray.length);
   for(let aQuiz of quizArray)
   {
-    //aQuiz.setQuestion();
-    //aQuiz.setAnswer();
-    aQuiz.renderForm();
+    if(!askedQuestion.includes(rando))
+    {
+      quizArray[rando].renderForm();
+      askedQuestion.push(rando);//askQuestion saves the rando number so that we dont ask question again
+      break;
+    }
   }
 }
 main();
@@ -104,7 +104,6 @@ function handleSubmit(event)
   event.preventDefault();
   let question_Box = event.target[0].childNodes[1].firstChild.nodeValue;
   let userResponse;
-  let container;
   let newUserAnswer1 = event.target.option1.checked;
   let newUserAnswer2 = event.target.option2.checked;
   let newUserAnswer3 = event.target.option3.checked;
@@ -126,7 +125,8 @@ function handleSubmit(event)
        question.quizAnswer === userResponse[0])//and check if the answer matches client response
     {
       alert(`you guessed ${userResponse[0]} and the answer is ${userResponse[1]}! Good job, have some points!`);
-      question.resultsCounter++;//if so, tally points
+      //question.resultsCounter++;//if so, tally points
+      resultsCounter++;
       break;
     }
     else if(question.quizQuestion === question_Box &&
