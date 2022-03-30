@@ -5,11 +5,32 @@ header
     
 }
 
-/*
-{
-    display: hide;
+.navbar-nav {
+    position: relative;
+    float: right;
+    color: darkblue;
+
 }
-*/
+
+h1 {
+    color: #be9715; 
+    font-family: impact, fantasy; 
+    font-size: 100px; line-height: 80px; 
+    font-weight: normal; 
+    margin-bottom: 0px; 
+    margin-top: 40px; 
+    text-align: center; 
+    text-shadow: 0 1px 1px #fff; }
+
+
+h3 { 
+    color: #be9715;
+    font-size: 29px;
+    font-family: Apple Chancery, cursive;       line-height: 45px;
+    text-align: center;
+    text-shadow: 0 1px 1px #fff;
+    padding-top: 20px; 
+}
 
 #left {  
     width: 400px;  
@@ -18,21 +39,23 @@ header
     object-fit: fill;  
     object-position: left top;  
     }  
-    #right {  
+#right {  
     width: 400px;  
     height: 300px;  
     border: 5px solid rgb(19, 1, 1);  
     object-fit: fill;  
     object-position: right top;  
     }  
-    #center{
-        width: 400px;  
-        height: 300px;  
-        border: 5px solid rgb(19, 1, 1);   
-        object-fit: fill;  
-        object-position: top center;
+#center{
+    width: 400px;  
+    height: 300px;  
+    border: 5px solid rgb(19, 1, 1);   
+    object-fit: fill;  
+    object-position: top center;
+    }
 
+body{
+    background-image:url('../img/cardgame.jpg');
     }
-    body{
-        background-image:url('../img/cardgame.jpg');
-    }
+
+ 
