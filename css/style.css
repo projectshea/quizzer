@@ -8,12 +8,12 @@ header
 .navbar-nav {
     position: relative;
     float: right;
-    color: darkblue;
+    color: rgb(139, 0, 0);
 
 }
 
 h1 {
-    color: #be9715; 
+    color: #aa0101; 
     font-family: impact, fantasy; 
     font-size: 100px; line-height: 80px; 
     font-weight: normal; 
@@ -24,7 +24,7 @@ h1 {
 
 
 h3 { 
-    color: #be9715;
+    color: #aa0101;
     font-size: 29px;
     font-family: Apple Chancery, cursive;       line-height: 45px;
     text-align: center;
@@ -55,7 +55,7 @@ h3 {
     }
 
 body{
-    background-image:url('../img/cardgame.jpg');
+    background-image:url('../img/background2.jpeg');
     }
 
  
