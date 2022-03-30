@@ -17,8 +17,20 @@ here is code that will:
 let quizArray = [];//uses the constructor to save an array of objects
 let arrCont = [];//content used to split the questions inside render prototype
 let askedQuestion = [];//saves integers where random() is used. this will keep track if something has been asked already.
-let resultsCounter; //quiz score - will be tallied in prototype
+let resultsCounter = 0; //quiz score - will be tallied in prototype
 let BonusQuesArray = [];//holds the bonus rounds
+
+// localStorage declarations and setup
+let currentScore;
+let highScore;
+
+if (typeof highScore !== Number) {
+  highScore = 0;
+}
+
+highScore = localStorage.getItem("highScore");
+console.log('last score was: ' + localStorage.getItem("prevScore"));
+
 
 //html callers
 let myForm = document.getElementById('Response-fromQuiz');
@@ -142,6 +154,22 @@ function handleSubmit(event)
       alert(`you guessed ${userResponse[0]} and the answer is ${userResponse[1]}! Good job, have some points!`);
       //question.resultsCounter++;//if so, tally points
       resultsCounter++;
+
+      // localStorage code BEGIN
+      let prevScore = resultsCounter;
+      localStorage.setItem("prevScore", prevScore);
+      currentScore = resultsCounter;
+      console.log('current score is: ' + currentScore);
+      
+
+    if (currentScore > highScore) {
+      highScore = currentScore;
+      console.log("THE high score is: " + highScore);
+      localStorage.setItem("highScore", highScore);
+    }
+
+      // localStorage code END
+
       break;
     }
     else if(question.quizQuestion === question_Box &&
