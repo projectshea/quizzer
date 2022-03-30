@@ -41,14 +41,16 @@ h3 {
     border: 5px solid rgb(19, 1, 1);   
     object-fit: fill;  
     object-position: left top;  
-    }  
+    } 
+     
 #right {  
     width: 400px;  
     height: 300px;  
     border: 5px solid rgb(19, 1, 1);  
     object-fit: fill;  
     object-position: right top;  
-    }  
+    } 
+
 #center{
     width: 400px;  
     height: 300px;  
@@ -60,6 +62,7 @@ h3 {
 body{
     background-image:url('../img/background2.jpeg');
     }
+
 footer{
     font-size: small;
     filter: drop-shadow(10px 10px 10px #0a0a0a);
@@ -68,4 +71,26 @@ footer{
 
 
 }
- 
+
+#Response-fromQuiz{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: solid;
+    text-align: center;
+    background: #fff;
+    border: black;
+    border-radius: 20px;
+    text-indent: 25px;
+
+}
+
+#submit-btn{
+  background-color: #e60202; 
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: white;
+  display: inline-block;
+  font-size: 16px;
+
+}
