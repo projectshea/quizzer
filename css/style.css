@@ -28,7 +28,8 @@ h1 {
 h3 { 
     color: #aa0101;
     font-size: 29px;
-    font-family: Apple Chancery, cursive;       line-height: 45px;
+    font-family: 'Times New Roman', Times, serif;     
+    line-height: 45px;
     text-align: center;
     text-shadow: 0 1px 1px #fff;
     padding-top: 20px; 
@@ -36,24 +37,25 @@ h3 {
 }
 
 #left {  
-    width: 400px;  
-    height: 300px;  
+    width: 200px;  
+    height: 150px;
     border: 5px solid rgb(19, 1, 1);   
     object-fit: fill;  
     object-position: left top;  
     } 
      
 #right {  
-    width: 400px;  
-    height: 300px;  
+    width: 200px; 
+    float: left; 
+    height: 150px;  
     border: 5px solid rgb(19, 1, 1);  
     object-fit: fill;  
     object-position: right top;  
     } 
 
 #center{
-    width: 400px;  
-    height: 300px;  
+    width: 200px;  
+    height: 150px;  
     border: 5px solid rgb(19, 1, 1);   
     object-fit: fill;  
     object-position: top center;
@@ -66,8 +68,8 @@ body{
 footer{
     font-size: small;
     filter: drop-shadow(10px 10px 10px #0a0a0a);
-    text-align: right;
-    font-family: cursive;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif
 
 
 }
@@ -119,18 +121,15 @@ footer{
 }
 
 legend {
-    
+    padding: 10px;
 }
 
-img {
-    
-}
 
 .scoreaside {
     border: solid black;
     margin: auto;
     width: 10%;
-    padding: 2px;
+    padding: 10px;
     border-radius: 1;
     background-color: white;
 
@@ -142,17 +141,38 @@ img {
     display: flex;
     background-color: #0a0a0a;
     width: 100%;
+    padding: 10px;
 }
 
 #card-topMenu
 {
     display: flex;
+    padding-bottom: 20px;
+    
     
 }
 
 #card-topMenu>img
 {
-    display: flex;
-    height: 30%;
-    width: 30%;
+    margin: auto;
+}
+
+#questionbox {
+    font-size: 30px;
+    margin: 20px;
+    display: block;
+}
+
+#option1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#questionbox label {
+    font-size: 20px;
+    display: block;
+}
+
+#questionbox button {
 }
