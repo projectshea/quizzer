@@ -81,6 +81,11 @@ footer{
     border-radius: 20px;
     text-indent: 25px;
 
+    margin: auto;
+    width: 50%;
+    border: 3px solid red;
+    padding: 10px;
+
 }
 
 #submit-btn{
@@ -92,5 +97,41 @@ footer{
   text-decoration: white;
   display: inline-block;
   font-size: 16px;
+
+}
+
+#highscore{
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+}
+
+#previousscore{
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+}
+
+#currentscore{
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+}
+
+legend {
+    
+}
+
+img {
+    
+}
+
+.scoreaside {
+    border: solid black;
+    margin: auto;
+    width: 10%;
+    padding: 2px;
+    border-radius: 1;
+    background-color: white;
 
 }
