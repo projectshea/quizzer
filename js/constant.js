@@ -1,10 +1,11 @@
 /*
-  TODO: these need to be in the same exact format including spaces. Otherwise, Splice wont work properly 
+  WARNING: these need to be in the same exact format including spaces. Otherwise, Splice wont work properly 
+  also do not modify anything here. use a new array and modify content in new array instead of appending or modifying in the constants.
 */
 
 
 
-let quizQArray = [
+const quizQArray = [
   //HTML Questions
   'Which of the following elements is used to create an unordered list?',
   'Which tag is used to create a hyperlink?',
@@ -48,13 +49,13 @@ let quizQArray = [
 
 ];
 
-let answersArray = [
+const answersArray = [
   'c','a','b','d','c','c','d','d','a','b', //HTML Answers
   'b','d','c','a','a','b','d','d','b','a',  //CSS Answers
   'b','c','d','d','a','d','d','b','a','a'//JavaScript Answers
 ];
 
-let optionsArray = [
+const optionsArray = [
   //HTML options
   'a.<list>-b.<unorderedList>-c.<ul>-d.<li>',
   'a.<a>-b.<b>-c.<link>-d.<source>',
