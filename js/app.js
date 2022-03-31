@@ -20,17 +20,34 @@ let askedQuestion = [];//saves integers where random() is used. this will keep t
 let resultsCounter = 0; //quiz score - will be tallied in prototype
 let BonusQuesArray = [];//holds the bonus rounds
 
-// localStorage declarations and setup
-let currentScore;
-let highScore;
+// localStorage variables
+let currentScore; 
+let prevScore = localStorage.getItem("prevScore"); // get value from local storage
+let highScore = localStorage.getItem("highScore"); // get value from local storage
 
-if (typeof highScore !== Number) {
+// Sets scores to zero if this is the first time the page is loaded/no values in local storage. Otherwise values would be null or undefined, which would be displayed on screen. We don't want that.
+if (currentScore == null || currentScore == undefined) {
+  currentScore = 0;
+}
+
+if (highScore == null || highScore == undefined) {
   highScore = 0;
 }
 
-highScore = localStorage.getItem("highScore");
-console.log('last score was: ' + localStorage.getItem("prevScore"));
+if (prevScore == null || prevScore == undefined) {
+  prevScore = 0;
+}
 
+
+// display scores from local storage
+
+function displayScore() {
+  document.getElementById("highscore").innerHTML = "High Score: " + highScore;
+  document.getElementById("previousscore").innerHTML = "Previous Score: " + prevScore;
+  document.getElementById("currentscore").innerHTML = "Current Score: " + currentScore;
+}
+// calls the above function to display scores
+displayScore();
 
 //html callers
 let myForm = document.getElementById('Response-fromQuiz');
@@ -154,20 +171,21 @@ function handleSubmit(event)
       //question.resultsCounter++;//if so, tally points
       resultsCounter++;
 
-      // localStorage code BEGIN
+      // localStorage code BEGIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       let prevScore = resultsCounter;
       localStorage.setItem("prevScore", prevScore);
       currentScore = resultsCounter;
-      console.log('current score is: ' + currentScore);
-      
 
-    if (currentScore > highScore) {
-      highScore = currentScore;
-      console.log("THE high score is: " + highScore);
-      localStorage.setItem("highScore", highScore);
-    }
+      // Updates the high score when a new high score is reached
+      if (currentScore > highScore) {
+        highScore = currentScore;
+        localStorage.setItem("highScore", highScore);
+      }
 
-      // localStorage code END
+      // Call displayScore() every time this loop happens in order to update scores in real-time.
+      displayScore();
+
+      // localStorage code END ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
       break;
     }
@@ -186,3 +204,9 @@ function handleSubmit(event)
 }
 //************** event listener ***************************/
 myForm.addEventListener('submit', handleSubmit);
+
+
+
+
+
+
