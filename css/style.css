@@ -135,3 +135,23 @@ img {
     background-color: white;
 
 }
+
+
+#game
+{
+    display: flex;
+    background-color: #0a0a0a;
+    width: 100%;
+}
+
+#card-topMenu
+{
+    display: flex;
+}
+
+#card-topMenu>img
+{
+    display: flex;
+    height: 30%;
+    width: 30%;
+}
