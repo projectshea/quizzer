@@ -39,6 +39,7 @@ h3 {
 #left {  
     width: 200px;  
     height: 150px;
+    border-radius: 30%;
     border: 5px solid rgb(19, 1, 1);   
     object-fit: fill;  
     object-position: left top;  
@@ -48,6 +49,7 @@ h3 {
     width: 200px; 
     float: left; 
     height: 150px;  
+    border-radius: 30%;
     border: 5px solid rgb(19, 1, 1);  
     object-fit: fill;  
     object-position: right top;  
@@ -55,9 +57,10 @@ h3 {
 
 #center{
     width: 200px;  
-    height: 150px;  
+    height: 150px; 
+    border-radius: 30%; 
     border: 5px solid rgb(19, 1, 1);   
-    object-fit: fill;  
+    object-fit: cover;  
     object-position: top center;
     }
 
@@ -69,7 +72,8 @@ footer{
     font-size: small;
     filter: drop-shadow(10px 10px 10px #0a0a0a);
     text-align: center;
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Times New Roman', Times, serif;
+    padding:10px;
 
 
 }
@@ -130,7 +134,7 @@ legend {
     margin: auto;
     width: 10%;
     padding: 10px;
-    border-radius: 1;
+    border-radius: 10;
     background-color: white;
 
 }
