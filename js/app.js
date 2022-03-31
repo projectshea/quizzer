@@ -64,7 +64,6 @@ function BonusRound(quizQuestion, quizOption, quizAnswer)
 GenerateQuiz.prototype.showQuestions = function()
 {
 
-
 }
 
 

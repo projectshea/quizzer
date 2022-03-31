@@ -28,7 +28,7 @@ let quizQArray = [
 
   'Which property changes the font of an HTML element?',
   'How do you make text bold?',
-  'Which of the following selects an element by it is class?',
+  'Which of the following selects an element by it\'s class?',
   'Which of the following selects an element by its ID?',
   'How do you select all the p elements inside of the body?',
 
@@ -63,7 +63,7 @@ let optionsArray = [
   'a.<h1>-b.<head>-c.<th>-d.<theader>',
 
   'a.<h2>-b.<p>-c.<s>-d.<head>',
-  'a.<ul>-b.<ol>-c.<lists>-d.A&B.',
+  'a.<ul>-b.<ol>-c.<lists>-d.A&B',
   'a.Data Tile Magnet-b.Data Orientation Model-c.Document Object Mode-d.Document Object Model',
   'a.Hyper Text Markup Language-b.HTML Technical Markup Language-c.Hyper Tooling Modeling Language-d.High Tech Modeling Language',
   'a.<html>, <h1>, <footer>, and finally <h6>-b.<html>, <head>, <body>, and finally <footer>-c.<body>, <h1>, <head>, <html>-d.<html>, <h6>, <h2>, <p>',
@@ -77,8 +77,8 @@ let optionsArray = [
   'a.color-b.text color-c.fg color-d.change text',
 
   'a. font weight-b.font family-c.fonts-d.font style',
-  'a.font-family: bold-b.style: bold-c.font.bold-d. font-weight: bold',
-  'a. .-b.#-c.class=-d.none of the above',
+  'a.font family: bold-b.style: bold-c.font.bold-d.font weight: bold',
+  'a.Dot Operator-b.#-c.class=-d.none of the above',
   'a.ID=-b.#-c.Identification-d.none of the above',
   'a.body p-b.p body-c.paragraph in body-d.none of the above',
 
@@ -88,10 +88,11 @@ let optionsArray = [
   'a.Client-b.Server-c.Both-d.Neither',
   'a.JavaScript variable names must begin with an underscore or a capital letter-b.JavaScript variable names must begin with a letter or an underscore-c.JavaScript variable names are case sensitive-d.Both B and C',
   'a. null-b.[null]-c.members-d.[{name: “Fred”}]',
-  'a.Object-Oriented-b.Object-Based-c.Procedural-d.None of the above',
+  'a.Object Oriented-b.Object Based-c.Procedural-d.None of the above',
 
-  'a.allow-b.let-c. var-d.Both B and C',
+  'a.allow-b.let-c.var-d.Both B and C',
   'a.getElement-b.accessHTML-c.writetoHTML-d.getElementbyId()',
   'a.function.create.myFunction()-b.function myFunction()-c.function.myFunction()-d.function = myFunction()',
-  'a.myFunction()-b.call function myFunction()-c.start myFunction()-d.function myFunction()','a.=-b.==-c.===-d.is'
+  'a.myFunction()-b.call function myFunction()-c.start myFunction()-d.function myFunction()',
+  'a.=-b.==-c.===-d.is'
 ];
