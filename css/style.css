@@ -167,16 +167,35 @@ legend {
     display: block;
 }
 
-#option1 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+input, label
+ {
+    display: flex;
+    /*flex-direction: row;*/
 }
 
 #questionbox label {
     font-size: 20px;
-    display: block;
+    display: flex;
+}
+#questionbox:only-child
+{
+    display: flex;
+    flex-direction: row;
+
+}
+input
+{
+    margin: 
+    10px/*top*/
+    02px/*left*/
+    00px/*bottom*/
+    40px;/*right*/
+}
+label
+{
+
 }
 
-#questionbox button {
+#questionbox
+{
 }
