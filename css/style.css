@@ -124,9 +124,7 @@ footer{
     padding: 3px;
 }
 
-legend {
-    padding: 10px;
-}
+
 
 
 .scoreaside {
@@ -143,7 +141,7 @@ legend {
 #game
 {
     display: flex;
-    background-color: #0a0a0a;
+    /*background-color: #0a0a0a;*/
     width: 100%;
     padding: 10px;
 }
@@ -161,41 +159,47 @@ legend {
     margin: auto;
 }
 
-#questionbox {
+#questionbox 
+{
+    float: left;
+    clear: none;
     font-size: 30px;
-    margin: 20px;
-    display: block;
+    /*display: block;*/
 }
 
-input, label
- {
-    display: flex;
-    /*flex-direction: row;*/
-}
 
-#questionbox label {
-    font-size: 20px;
-    display: flex;
-}
-#questionbox:only-child
+div
 {
     display: flex;
-    flex-direction: row;
-
 }
-input
+
+input[type=radio], input.radio
 {
+    float: left;
+    clear: none;
+
     margin: 
-    10px/*top*/
-    02px/*left*/
-    00px/*bottom*/
-    40px;/*right*/
+    2px/*top*/
+    0/*right*/
+    0/*bottom*/
+    8px;/*left*/
 }
 label
 {
 
+    float: left;
+    clear: none;
+    display: block;
+    font-size: medium;
+    padding: 
+    0px
+    0em
+    0px
+    0px;
 }
 
-#questionbox
+#submit-btn
 {
+    display: flex;
+    justify-content: flex-end;
 }

@@ -91,18 +91,22 @@ GenerateQuiz.prototype.renderForm = function()
 
   for(let i = 1; i < 5; ++i)//only four options
   {
+    const divElem = document.createElement('div');
+    legElem.appendChild(divElem);
+
     //input creator
     let inputElem = document.createElement('input');
     inputElem.setAttribute('type', 'radio');
     inputElem.setAttribute('id', 'option' + i);
     inputElem.setAttribute('name', 'optionsFamily');
-    legElem.appendChild(inputElem);
+    divElem.appendChild(inputElem);
     let splitter = arrCont[i - 1].split('.');
+    
     //label creator
     const labelElem = document.createElement('label');
     labelElem.setAttribute('for', 'option' + i);
     labelElem.textContent = splitter[0] + ') ' +  splitter[1];//offset from loop
-    legElem.appendChild(labelElem);
+    divElem.appendChild(labelElem);
   }
 }
 
