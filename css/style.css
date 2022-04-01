@@ -1,0 +1,205 @@
+header
+{
+    padding-bottom: 10px;
+    padding-top: 28px;
+    
+}
+
+.navbar-nav {
+    position: relative;
+    float: right;
+    color: rgb(139, 0, 0);
+
+}
+
+h1 {
+    color: #aa0101; 
+    font-family: impact, fantasy; 
+    font-size: 100px; line-height: 80px; 
+    font-weight: normal; 
+    margin-bottom: 0px; 
+    margin-top: 40px; 
+    text-align: center; 
+    text-shadow: 0 1px 1px #fff; 
+    filter: drop-shadow(10px 10px 10px #aa0101);
+}
+
+
+h3 { 
+    color: #aa0101;
+    font-size: 29px;
+    font-family: 'Times New Roman', Times, serif;     
+    line-height: 45px;
+    text-align: center;
+    text-shadow: 0 1px 1px #fff;
+    padding-top: 20px; 
+    filter: drop-shadow(10px 10px 10px #aa0101);
+}
+
+#left {  
+    width: 200px;  
+    height: 150px;
+    border-radius: 30%;
+    border: 5px solid rgb(19, 1, 1);   
+    object-fit: fill;  
+    object-position: left top;  
+    } 
+     
+#right {  
+    width: 200px; 
+    float: left; 
+    height: 150px;  
+    border-radius: 30%;
+    border: 5px solid rgb(19, 1, 1);  
+    object-fit: fill;  
+    object-position: right top;  
+    } 
+
+#center{
+    width: 200px;  
+    height: 150px; 
+    border-radius: 30%; 
+    border: 5px solid rgb(19, 1, 1);   
+    object-fit: cover;  
+    object-position: top center;
+    }
+
+body{
+    background-image:url('../img/background2.jpeg');
+    }
+
+footer{
+    font-size: small;
+    filter: drop-shadow(10px 10px 10px #0a0a0a);
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    padding:10px;
+
+
+}
+
+#Response-fromQuiz{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: solid;
+    text-align: center;
+    background: #fff;
+    border: black;
+    border-radius: 20px;
+    text-indent: 25px;
+
+    margin: auto;
+    width: 50%;
+    border: 3px solid red;
+    padding: 10px;
+
+}
+
+#submit-btn{
+  background-color: #e60202; 
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: white;
+  display: inline-block;
+  font-size: 16px;
+
+}
+
+#highscore{
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+}
+
+#previousscore{
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+}
+
+#currentscore{
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+}
+
+
+
+
+.scoreaside {
+    border: solid black;
+    margin: auto;
+    width: 10%;
+    padding: 10px;
+    border-radius: 10;
+    background-color: white;
+
+}
+
+
+#game
+{
+    display: flex;
+    /*background-color: #0a0a0a;*/
+    width: 100%;
+    padding: 10px;
+}
+
+#card-topMenu
+{
+    display: flex;
+    padding-bottom: 20px;
+    
+    
+}
+
+#card-topMenu>img
+{
+    margin: auto;
+}
+
+#questionbox 
+{
+    float: left;
+    clear: none;
+    font-size: 30px;
+    /*display: block;*/
+}
+
+
+div
+{
+    display: flex;
+}
+
+input[type=radio], input.radio
+{
+    float: left;
+    clear: none;
+
+    margin: 
+    2px/*top*/
+    0/*right*/
+    0/*bottom*/
+    8px;/*left*/
+}
+label
+{
+
+    float: left;
+    clear: none;
+    display: block;
+    font-size: medium;
+    padding: 
+    0px
+    0em
+    0px
+    0px;
+}
+
+#submit-btn
+{
+    display: flex;
+    justify-content: flex-end;
+}
