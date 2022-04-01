@@ -78,12 +78,6 @@ function BonusRound(quizQuestion, quizOption, quizAnswer)
   BonusQuesArray.push(this);
 }
 /******************************* Prototypes*************** */
-GenerateQuiz.prototype.showQuestions = function()
-{
-
-}
-
-
 GenerateQuiz.prototype.renderForm = function()
 {
   arrCont = this.quizOption.split('-');
@@ -111,9 +105,7 @@ GenerateQuiz.prototype.renderForm = function()
 }
 
 /******************** generating the questions ****************/
-//quizHtmlArray, quizCssArray, quizJsArray
-//optionsHtmlArray, optionsCssArray, optionsJsArray
-//answersHtmlArray, anwswersCssArray, answersJsArray
+//will generate a quiz with question, options, and answer
 for(let i = 0; i < quizQArray.length; i++)//all arrays should be exactly the same length
 {
   new GenerateQuiz(quizQArray[i], optionsArray[i], answersArray[i]);
