@@ -77,7 +77,7 @@ const optionsArray = [
   'a.background-color-b.bgcolor-c.color-d.bg-color',
   'a.color-b.text color-c.fg color-d.change text',
 
-  'a. font weight-b.font family-c.fonts-d.font style',
+  'a.font weight-b.font family-c.fonts-d.font style',
   'a.font family: bold-b.style: bold-c.font.bold-d.font weight: bold',
   'a.Dot Operator-b.#-c.class=-d.none of the above',
   'a.ID=-b.#-c.Identification-d.none of the above',
