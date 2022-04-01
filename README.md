@@ -10,11 +10,11 @@
 
 This project is meant to showcase the project member's foundational HTML, CSS, and JavaScript skills.
 
-# Casino HTML5/CSS/JAVASCRIPT Poker Game
+# HTML5/CSS/JAVASCRIPT Quizzer
 ## Project Developers:
 Raul Zarate
 Michael Brunette
 Allen Brazier
 
-- This game is to test you might for fundemental knowledge in web development in a fun casino!
+- This game is to test you might for fundemental knowledge in web development!
 
